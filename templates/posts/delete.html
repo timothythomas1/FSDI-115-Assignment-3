@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Delete Issue
+{% endblock title %}
+
+{% block content %}
+    <div id="update-container">
+        <h1>Delete task:</h1>
+        <h2>'{{ post.body }}' <span id="question-delete">?</span></h2>
+        <h4>By: {{ post.poster }}</h4>
+        <form method="POST" id="confirm-del-btn">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="">
+                <button id="confirm-del-btn" type="submit" class="btn btn-danger btn-lg">
+                    Confirm
+                    <i class="fa-solid fa-dumpster-fire"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+{% endblock content %}  

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Profile
+{% endblock title %}
+
+{% block content %}
+    <div id="update-container">
+        <h1><i class="fa-solid fa-user-astronaut"></i>{{user.username}}'s Profile</h1>
+
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Update" class="btn btn-dark btn-md" id="update-post-btn">
+        </form>
+    </div>
+{% endblock content %} 

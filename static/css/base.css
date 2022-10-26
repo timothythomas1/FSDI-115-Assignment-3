@@ -1,3 +1,40 @@
+.comment-accordian{
+    margin-top: 30px;
+}
+
+.comment-count, 
+.like-count, 
+.dislike-count{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+}
+.post-text-box{
+    padding: 20px
+}
+.profile-pic{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    border-radius: 50%;
+
+}
+.post-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.on-blue-message{
+    color: #212529;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    width: fit-content;
+    padding: 10px;
+    margin-top:20px;
+    margin-bottom:20px;
+    border-radius: 8px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 h1,
 h2,
 h3,
@@ -9,7 +46,9 @@ h6{
     margin-bottom:10px;
     color: #212529;
 }
-
+body{
+    background-color: #0b66c2;
+}
 .forbidden,
 .logged-out,
 .sign-in,
@@ -26,6 +65,7 @@ h6{
     color: #212529;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     border-radius: 8px;
+    background-color: white;
 }
 .sign-up{
     width: fit-content;
@@ -34,8 +74,9 @@ h6{
     margin:10% auto;
     margin-bottom:10px;
     color: #212529;
-    border-radius: 5px;
+    border-radius: 8px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    background-color: white;
 }
 
 #daily{
@@ -44,14 +85,15 @@ h6{
 #logo-daily,
 #question-delete,
 .forbidden h1{
-    color: blue;
+    color: #0b66c2;
 }
 #log-in-icon{
-    margin-left: 10px;
+    margin-left: 10px;background-color: #212529;
 }
 .box{
     /* border: solid rgb(64, 58, 58) 1px; */
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    background-color: white;
 }
 
 #id_title,
@@ -61,7 +103,8 @@ h6{
     padding: 5px;
     margin: 0px auto;
     width: 100%;
-    border-radius: 5px;
+    border-radius: 8px;
+
 }
 
 .create-post {
@@ -73,14 +116,14 @@ h6{
 
 #confirm-del{
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 8px;
     text-align: center;
 }
 #confirm-del-btn {
     font-size: xx-large;
     padding: 5px;
     margin: 0px auto;
-    border-radius: 5px;
+    border-radius: 8px;
     text-align: center;
     width: 250px;
 }

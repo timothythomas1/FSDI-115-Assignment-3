@@ -27,19 +27,14 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'user_profile' user.id %}">
-                            {{ user.role }}
-                        </a>
-                    </li>
                     <li class="nav-item dropdown">
 
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa-solid fa-user-astronaut"></i> {{ user.username }}
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" aria-current="page" href="{% url 'new' %}">Create Issue</a></li>
-                            <li><a class="dropdown-item" aria-current="page" href="{% url 'my_posted_list' %}">My Issued</a></li>
+                            <li><a class="dropdown-item" aria-current="page" href="{% url 'new' %}">Start a Post</a></li>
+                            <li><a class="dropdown-item" aria-current="page" href="{% url 'my_posted_list' %}">My Posts</a></li>
                             <li><hr class="dropdown-divider"></li>
                             {% if user.is_superuser %}
                             <li><a class="dropdown-item" aria-current="page" href="{% url 'admin:index' %}"><strong>Admin </strong></a></li>
@@ -57,10 +52,16 @@
                     </li>
                     {% endif %} 
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'my_dash' %}">My Dash</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li> 
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'post_list' %}">Posts</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'my_dashboard' %}">Dashboard</a>
+                    </li> 
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'my_friends_list' %}">My Friends</a>
+                    </li> 
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'post_list' %}">Feed</a>
                     </li> 
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'about' %}">About</a>
@@ -77,7 +78,7 @@
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search all posts" aria-label="Search">
-                    <button class="btn btn-outline-primary" type="submit">Search</button>
+                    <button class="btn btn-outline-dark" type="submit">Search</button>
                 </form>
                 {% if user.is_authenticated %}
                 {% else %}
