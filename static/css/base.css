@@ -1,0 +1,133 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    text-align: center;
+    margin-top:10px;
+    margin-bottom:10px;
+    color: #212529;
+}
+
+.forbidden,
+.logged-out,
+.sign-in,
+.password-reset,
+.password-change,
+#update-container,
+#delete-confirm{
+    width: fit-content;
+    border: solid black 1px;
+    padding: 20px;
+    text-align: center;
+    margin:5% 20%;
+    margin-bottom:10px;
+    color: #212529;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    border-radius: 8px;
+}
+.sign-up{
+    width: fit-content;
+    border: solid black 1px;
+    padding: 20px;
+    margin:10% auto;
+    margin-bottom:10px;
+    color: #212529;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+#daily{
+    color: #2d8cff;
+}
+#logo-daily,
+#question-delete,
+.forbidden h1{
+    color: blue;
+}
+#log-in-icon{
+    margin-left: 10px;
+}
+.box{
+    /* border: solid rgb(64, 58, 58) 1px; */
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+#id_title,
+#id_subtitle,
+#id_author,
+#id_body{
+    padding: 5px;
+    margin: 0px auto;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.create-post {
+    padding: 5px;
+    margin: 0px auto;
+    width: 100%;
+
+}
+
+#confirm-del{
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+#confirm-del-btn {
+    font-size: xx-large;
+    padding: 5px;
+    margin: 0px auto;
+    border-radius: 5px;
+    text-align: center;
+    width: 250px;
+}
+
+#post-container{
+    width: 50%;
+    align-items: center;
+    text-align: center;
+}
+
+#update-post-btn{
+    width: 100%;
+
+}
+
+.author-options,
+#post-more {
+    text-align: right;
+    margin: 10px 10px;
+
+}
+.post-detail{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Used for titles of posts */
+h5 {
+    margin-bottom: 10px;
+}
+
+#issue-options{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+#status{
+    color: #212529;
+    background-color: orange;
+    text-align: center;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-size: xx-large;
+}
+
+
