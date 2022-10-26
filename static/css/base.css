@@ -1,5 +1,19 @@
+.my-dash-lower{
+    display: flex;
+    gap: 30px;
+}
+.my-friends-dash{
+    flex:1
+}
+.my-feed-dash{
+    flex:3
+}
 .comment-accordian{
     margin-top: 30px;
+}
+.comment-box{
+    margin-top: 30px;
+    width: 100%;
 }
 
 .comment-count, 

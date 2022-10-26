@@ -9,11 +9,398 @@
 <h1 class="on-blue-message">My Dashboard</h1>
 {% elif not user.is_superuser and user.is_authenticated%}
 <h1 class="on-blue-message">My Dashboard</h1>
+
+
+<p></p>
+
+<div class="card box">
+    <div class="card-body">
+        <div class="card-body">
+            <div class="post-top">
+                <div  class="post-top">
+                    <div>
+                        <img src="/static/img/male.jpeg" alt="default user pic" width="100" height="100" class="profile-pic">
+                    </div>
+                    <div>
+                        <div>
+                            <strong>First Name:</strong> <a href="#"> {{ user.first_name }} </a>
+                        </div>
+                        <div>
+                            <strong>Last Name:</strong> <a href="#"> {{ user.last_name }} </a>
+                        </div>
+                        <div>
+                            <strong>Username:</strong> <a href="#"> {{ user.username }} </a>
+                        </div>
+                        <div>
+                            <strong>Member Since:</strong> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <hr>
+        <p></p>
+            <div class="card box post-text-box">
+                <strong>Bio:</strong> 
+                <div>
+                    Age: 
+                </div>
+                <p class="card-text">{{ post.body }}</p> {# There are more filters out there! #}
+                Summary:
+                <p>Balhahahahahahahahahahah a;sldkfja;lsdkfj  ;;alkj;lkj;lkj;l kj;lkj;lkj;l kj;lkj;kl</p>
+                <div class="author-options">
+                    {% if user != post.poster %}
+                    <a href="" class="btn btn-light btn-sm">
+                        Update <i class="fa-regular fa-pen-to-square"></i>
+                    </a>
+                    {% endif %}
+
+                    {% if user == post.poster %}
+                    <a href="{% url 'delete' post.id %}" class="btn btn-danger btn-sm">
+                        <i class="fa-solid fa-dumpster"></i>
+                    </a>
+                    <a href="{% url 'edit' post.id %}" class="btn btn-success btn-sm">
+                        <i class="fa-regular fa-pen-to-square"></i>
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+
+
+<div class="my-dash-lower">
+
+    <div class="my-friends-dash">
+        <h4 class="on-blue-message">My Friend's</h4>
+
+        <div class="card box">
+            <div class="card-body">
+                <div class="post-top">
+                    <div  class="post-top">
+                        <div>
+                            <img src="/static/img/male.jpeg" alt="default user pic" width="70" height="70" class="profile-pic">
+                        </div>
+                        <div>
+                            <div>
+                                <strong> Name:</strong>
+                            </div>
+                            <div>
+                                <strong> Age:</strong>
+                            </div>
+                            <div>
+                                <strong> Friends Since:</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="author-options">
+                    <a href="#" class="btn btn-sm btn-light">
+                        Profile
+                    </a>
+                    <a href="#" class="btn btn-sm btn-light">
+                        <i class="fa-regular fa-message"></i>
+                    </a>
+                    <a href="#" class="btn btn-sm btn-light">
+                        Unfriend
+                    </a>
+                </div>
+            </div>
+        </div>
+        <br>
+    
+        <div class="card box">
+            <div class="card-body">
+                <div class="post-top">
+                    <div  class="post-top">
+                        <div>
+                            <img src="/static/img/male.jpeg" alt="default user pic" width="70" height="70" class="profile-pic">
+                        </div>
+                        <div>
+                            <div>
+                                <strong> Name:</strong>
+                            </div>
+                            <div>
+                                <strong> Age:</strong>
+                            </div>
+                            <div>
+                                <strong> Friends Since:</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="author-options">
+                    <a href="#" class="btn btn-sm btn-light">
+                        Profile
+                    </a>
+                    <a href="#" class="btn btn-sm btn-light">
+                        <i class="fa-regular fa-message"></i>
+                    </a>
+                    <a href="#" class="btn btn-sm btn-light">
+                        Unfriend
+                    </a>
+                </div>
+            </div>
+        </div>
+        <br />
+    
+        <div class="card box">
+            <div class="card-body">
+                <div class="post-top">
+                    <div  class="post-top">
+                        <div>
+                            <img src="/static/img/male.jpeg" alt="default user pic" width="70" height="70" class="profile-pic">
+                        </div>
+                        <div>
+                            <div>
+                                <strong> Name:</strong>
+                            </div>
+                            <div>
+                                <strong> Age:</strong>
+                            </div>
+                            <div>
+                                <strong> Friends Since:</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="author-options">
+                    <a href="#" class="btn btn-sm btn-light">
+                        Profile
+                    </a>
+                    <a href="#" class="btn btn-sm btn-light">
+                        <i class="fa-regular fa-message"></i>
+                    </a>
+                    <a href="#" class="btn btn-sm btn-light">
+                        Unfriend
+                    </a>
+                </div>
+            </div>
+        </div>
+        <br />
+    </div>
+
+    <div class="my-feed-dash">
+        <div class="card box">
+            <div class="card-body">
+                <div class="card-body">
+                    <div>
+                        <h1>My Feed</h1>
+                    </div>
+                    <hr>
+                    <div class="post-top">
+                        <div  class="post-top">
+                            <ul>
+                                {% if post_list %}
+                                {% for post in post_list %}
+                                <div class="card box">
+                                    <div class="card-body">
+                                        <div class="post-top">
+                                            <div  class="post-top">
+                                                <div>
+                                                    <img src="/static/img/male.jpeg" alt="default user pic" width="70" height="70" class="profile-pic">
+                                                </div>
+                                                <div>
+                                                    <div>
+                                                        <strong>By:</strong> <a href="#"> {{ post.poster}} </a>
+                                                    </div>
+                                                    <div>
+                                                        <strong> On:</strong> {{ post.created_on }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="author-options">
+                                                <span class="badge text-bg-light"><strong>Comments:</strong> {{ post.comments }}</span>
+                                                <span class="badge text-bg-light"><strong>Likes:</strong> {{ post.likes }}</span>
+                                                <span class="badge text-bg-light"><strong>Dislikes:</strong> {{ post.dislikes }}</span>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <p class="card-text">{{ post.body|truncatechars:350 }}</p> {# There are more filters out there! #}
+                                        <div class="author-options">
+                                            {% if user != post.poster %}
+                                            <a href="#" class="btn btn-sm btn-light">
+                                                <i class="fa-regular fa-message"></i>
+                                            </a>
+                                            <a href="#" class="btn btn-sm btn-light">
+                                                <i class="fa-regular fa-thumbs-up"></i>
+                                            </a>
+                                            <a href="#" class="btn btn-sm btn-light">
+                                                <i class="fa-regular fa-thumbs-down"></i>
+                                            </a>
+                                            <a href="{% url 'post_detail' post.id %}" class="btn btn-dark btn-sm">
+                                                More
+                                            </a>
+                                            {% endif %}
+        
+                                            {% if user == post.poster %}
+                                            <a href="{% url 'delete' post.id %}" class="btn btn-danger btn-sm">
+                                                <i class="fa-solid fa-dumpster"></i>
+                                            </a>
+                                            <a href="{% url 'edit' post.id %}" class="btn btn-success btn-sm">
+                                                <i class="fa-regular fa-pen-to-square"></i>
+                                            </a>
+                                            <a href="{% url 'post_detail' post.id %}" class="btn btn-dark btn-sm">
+                                                More
+                                            </a>
+                                            {% endif %}
+        
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                                {% endfor %}
+                                {% else %}
+                                <h1>Awwww!</h1>
+                                <h1>Currently no Posts!</h1>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                <hr>
+
+                <p></p>
+                    <div class="card box post-text-box">
+                        <strong>Post Examnple</strong>
+                        <p>Balhahahahahahahahahahah a;sldkfja;lsdkfj  ;;alkj;lkj;lkj;l kj;lkj;lkj;l kj;lkj;kl</p>
+                        <div class="author-options">
+                            {% if user != post.poster %}
+                            <a href="" class="btn btn-light btn-sm">
+                                Update <i class="fa-regular fa-pen-to-square"></i>
+                            </a>
+                            {% endif %}
+        
+                            {% if user == post.poster %}
+                            <a href="{% url 'delete' post.id %}" class="btn btn-danger btn-sm">
+                                <i class="fa-solid fa-dumpster"></i>
+                            </a>
+                            <a href="{% url 'edit' post.id %}" class="btn btn-success btn-sm">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="card box post-text-box">
+                        <strong>Post Examnple</strong>
+                        <p>Balhahahahahahahahahahah a;sldkfja;lsdkfj  ;;alkj;lkj;lkj;l kj;lkj;lkj;l kj;lkj;kl</p>
+                        <div class="author-options">
+                            {% if user != post.poster %}
+                            <a href="" class="btn btn-light btn-sm">
+                                Update <i class="fa-regular fa-pen-to-square"></i>
+                            </a>
+                            {% endif %}
+        
+                            {% if user == post.poster %}
+                            <a href="{% url 'delete' post.id %}" class="btn btn-danger btn-sm">
+                                <i class="fa-solid fa-dumpster"></i>
+                            </a>
+                            <a href="{% url 'edit' post.id %}" class="btn btn-success btn-sm">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="card box post-text-box">
+                        <strong>Post Examnple</strong>
+                        <p>Balhahahahahahahahahahah a;sldkfja;lsdkfj  ;;alkj;lkj;lkj;l kj;lkj;lkj;l kj;lkj;kl</p>
+                        <div class="author-options">
+                            {% if user != post.poster %}
+                            <a href="" class="btn btn-light btn-sm">
+                                Update <i class="fa-regular fa-pen-to-square"></i>
+                            </a>
+                            {% endif %}
+        
+                            {% if user == post.poster %}
+                            <a href="{% url 'delete' post.id %}" class="btn btn-danger btn-sm">
+                                <i class="fa-solid fa-dumpster"></i>
+                            </a>
+                            <a href="{% url 'edit' post.id %}" class="btn btn-success btn-sm">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="card box post-text-box">
+                        <strong>Post Examnple</strong>
+                        <p>Balhahahahahahahahahahah a;sldkfja;lsdkfj  ;;alkj;lkj;lkj;l kj;lkj;lkj;l kj;lkj;kl</p>
+                        <div class="author-options">
+                            {% if user != post.poster %}
+                            <a href="" class="btn btn-light btn-sm">
+                                Update <i class="fa-regular fa-pen-to-square"></i>
+                            </a>
+                            {% endif %}
+        
+                            {% if user == post.poster %}
+                            <a href="{% url 'delete' post.id %}" class="btn btn-danger btn-sm">
+                                <i class="fa-solid fa-dumpster"></i>
+                            </a>
+                            <a href="{% url 'edit' post.id %}" class="btn btn-success btn-sm">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="card box post-text-box">
+                        <strong>Post Examnple</strong>
+                        <p>Balhahahahahahahahahahah a;sldkfja;lsdkfj  ;;alkj;lkj;lkj;l kj;lkj;lkj;l kj;lkj;kl</p>
+                        <div class="author-options">
+                            {% if user != post.poster %}
+                            <a href="" class="btn btn-light btn-sm">
+                                Update <i class="fa-regular fa-pen-to-square"></i>
+                            </a>
+                            {% endif %}
+        
+                            {% if user == post.poster %}
+                            <a href="{% url 'delete' post.id %}" class="btn btn-danger btn-sm">
+                                <i class="fa-solid fa-dumpster"></i>
+                            </a>
+                            <a href="{% url 'edit' post.id %}" class="btn btn-success btn-sm">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="card box post-text-box">
+                        <strong>Post Examnple</strong>
+                        <p>Balhahahahahahahahahahah a;sldkfja;lsdkfj  ;;alkj;lkj;lkj;l kj;lkj;lkj;l kj;lkj;kl</p>
+                        <div class="author-options">
+                            {% if user != post.poster %}
+                            <a href="" class="btn btn-light btn-sm">
+                                Update <i class="fa-regular fa-pen-to-square"></i>
+                            </a>
+                            {% endif %}
+        
+                            {% if user == post.poster %}
+                            <a href="{% url 'delete' post.id %}" class="btn btn-danger btn-sm">
+                                <i class="fa-solid fa-dumpster"></i>
+                            </a>
+                            <a href="{% url 'edit' post.id %}" class="btn btn-success btn-sm">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        
+        </div>
+        <br>
+    </div>
+</div>
+
+
 {% else %}
 <h1 class="on-blue-message">My Dashboard</h1>
 {% endif %}
-<h3 class="on-blue-message">Friend 1</h3>
-<h3 class="on-blue-message">Friend 2</h3>
-<h3 class="on-blue-message">Friend 3</h3>
-<h3 class="on-blue-message">Friend 4</h3>
 {% endblock content %}

@@ -32,13 +32,13 @@
                 <div class="author-options">
                     {% if user != post.poster %}
                     <a href="#" class="btn btn-sm btn-light">
-                        <i class="fa-regular fa-message"></i>
-                    </a>
-                    <a href="#" class="btn btn-sm btn-light">
                         <i class="fa-regular fa-thumbs-up"></i>
                     </a>
                     <a href="#" class="btn btn-sm btn-light">
                         <i class="fa-regular fa-thumbs-down"></i>
+                    </a>
+                    <a href="#" class="btn btn-sm btn-light">
+                        <i class="fa-regular fa-message"></i>
                     </a>
                     {% endif %}
     
@@ -94,23 +94,16 @@
                         <img src="/static/img/male.jpeg" alt="default user pic" width="30" height="30" class="profile-pic">
                         <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
                     </div>
-                    <hr>
-                    <div class="accordion-body">
-                        <img src="/static/img/male.jpeg" alt="default user pic" width="30" height="30" class="profile-pic">
-                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                    </div>
-                    <hr>
-                    <div class="accordion-body">
-                        <img src="/static/img/male.jpeg" alt="default user pic" width="30" height="30" class="profile-pic">
-                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                    </div>
-                    <hr>
                 </div>
             </div>
 
             </div>
+            <form action="/form/submit" method="post">
+                <textarea name="textarea" rows="5" cols="40" class="comment-box">Leave a comment...</textarea>
+                <br>
+                <input type="submit" name="submitInfo" value="Submit">
+            </form>
         </div>
     </div>
-
 
 {% endblock content %}
