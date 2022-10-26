@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Issues{% endblock title %}</title>
+    <title>{% block title %}My Dash{% endblock title %}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static '/css/base.css' %}"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
@@ -27,19 +27,14 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'user_profile' user.id %}">
-                            {{ user.role }}
-                        </a>
-                    </li>
                     <li class="nav-item dropdown">
 
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa-solid fa-user-astronaut"></i> {{ user.username }}
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" aria-current="page" href="{% url 'new' %}">Create Issue</a></li>
-                            <li><a class="dropdown-item" aria-current="page" href="{% url 'my_issued_list' %}">My Issued</a></li>
+                            <li><a class="dropdown-item" aria-current="page" href="{% url 'new' %}">Create Post</a></li>
+                            <li><a class="dropdown-item" aria-current="page" href="{% url 'my_posted_list' %}">My Posts</a></li>
                             <li><hr class="dropdown-divider"></li>
                             {% if user.is_superuser %}
                             <li><a class="dropdown-item" aria-current="page" href="{% url 'admin:index' %}"><strong>Admin </strong></a></li>

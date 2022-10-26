@@ -8,9 +8,9 @@
 {% if user.is_superuser %}
 <h1>Hello, Admin {{ user.username }}!</h1>
 {% elif not user.is_superuser and user.is_authenticated%}
-<h1>Hello, {{user.role}} {{ user.username }}!</h1>
+<h1>Hello, {{ user.username }}!</h1>
 {% else %}
 <h1>Hello, oh sentient one.</h1>
 {% endif %}
-<h3>Welcome to the iKanban!</h3>
+<h3>Welcome to the iSocial!</h3>
 {% endblock content %}
