@@ -3,3 +3,4 @@ venv
 .env
 staticfiles
 heroku_config.sh
+sendgrid.env

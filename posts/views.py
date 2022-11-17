@@ -11,6 +11,8 @@ class MyFriendsListView(TemplateView):
     template_name = "friends/friends_list.html"
 class MyDashboardView(TemplateView):
     template_name = "pages/dashboard.html"
+class PasswordResetDoneView(TemplateView):
+    template_name = "pages/password_reset_done.html"
 
 
 class PostDetailView(DetailView, LoginRequiredMixin):
@@ -24,8 +26,8 @@ class MyPostedListView(ListView):
     def get_context_data(self, **kwargs): #Keyword arguments. All list views have this get_context_data() method. 
         context = super().get_context_data(**kwargs) # The get method returns records that matched the name = "published". you can also use it like this, .get(name="published")
         context["post_list"] = Post.objects.filter(poster=self.request.user # Ensuring that the data is returned based on the author logged in.
-                                          ).order_by("created_on"
-                                          ).reverse()
+                                        ).order_by("created_on"
+                                        ).reverse()
         return context
 class PostListView(ListView):
     template_name = "posts/post_list.html"
@@ -62,3 +64,4 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView): # REM
     def test_func(self):
         Post_obj = self.get_object()
         return Post_obj.requester == self.request.user
+

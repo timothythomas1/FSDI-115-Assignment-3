@@ -7,7 +7,8 @@ from .views import (
     PostUpdateView,
     MyPostedListView,
     MyFriendsListView,
-    MyDashboardView
+    MyDashboardView,
+    PasswordResetDoneView
     # UsersView,
     # DraftPostListView,
     # ArchivedPostListView,
@@ -24,5 +25,5 @@ urlpatterns = [
 
     path('friends/', MyFriendsListView.as_view(), name='my_friends_list'),
     path('dashboard/', MyDashboardView.as_view(), name='my_dashboard'),
-    
+    path('password_reset/done/', PasswordResetDoneView.as_view(), name='password_reset_done'),
 ]
