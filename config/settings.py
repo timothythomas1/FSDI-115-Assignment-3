@@ -142,5 +142,5 @@ EMAIL_HOST_PASSWORD = env('SENDGRID_API_KEY')
 
 # The email you'll be sending emails from
 DEFAULT_FROM_EMAIL = env('FROM_EMAIL', default='throwawayjunk18@gmail.com')
-LOGIN_REDIRECT_URL = 'success'
+LOGIN_REDIRECT_URL = 'home'
 

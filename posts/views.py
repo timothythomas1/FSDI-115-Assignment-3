@@ -13,6 +13,8 @@ class MyDashboardView(TemplateView):
     template_name = "pages/dashboard.html"
 class PasswordResetDoneView(TemplateView):
     template_name = "pages/password_reset_done.html"
+class UserProfileView(TemplateView):
+    template_name = "posts/new.html"
 
 
 class PostDetailView(DetailView, LoginRequiredMixin):
