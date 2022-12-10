@@ -19,7 +19,7 @@
                     </div>
                     <div>
                         <div>
-                            <strong>By:</strong> <a href="#"> {{ post.poster}} </a>
+                            <strong>By:</strong> <a href="#"> {{ post.poster }} </a>
                         </div>
                         <div>
                             <strong> On:</strong> {{ post.created_on }}
@@ -35,6 +35,17 @@
             <hr>
             <p class="card-text">{{ post.body|truncatechars:350 }}</p> {# There are more filters out there! #}
             <div class="author-options">
+                {% if user == post.poster %}
+                <a href="{% url 'delete' post.id %}" class="btn btn-danger btn-sm">
+                    <i class="fa-solid fa-dumpster"></i>
+                </a>
+                <a href="{% url 'edit' post.id %}" class="btn btn-success btn-sm">
+                    <i class="fa-regular fa-pen-to-square"></i>
+                </a>
+                <a href="{% url 'post_detail' post.id %}" class="btn btn-dark btn-sm">
+                    More
+                </a>
+                {% endif %}
                 {% if user != post.poster %}
                 <a href="#" class="btn btn-sm btn-light">
                     <i class="fa-regular fa-message"></i>
@@ -50,26 +61,16 @@
                 </a>
                 {% endif %}
 
-                {% if user == post.poster %}
-                <a href="{% url 'delete' post.id %}" class="btn btn-danger btn-sm">
-                    <i class="fa-solid fa-dumpster"></i>
-                </a>
-                <a href="{% url 'edit' post.id %}" class="btn btn-success btn-sm">
-                    <i class="fa-regular fa-pen-to-square"></i>
-                </a>
-                <a href="{% url 'post_detail' post.id %}" class="btn btn-dark btn-sm">
-                    More
-                </a>
-                {% endif %}
-
             </div>
         </div>
     </div>
     <br />
     {% endfor %}
     {% else %}
+   
     <h1>Awwww!</h1>
     <h1>Currently no Posts!</h1>
     {% endif %}
+    {% endblock content %}
 </ul>
-{% endblock content %}
+

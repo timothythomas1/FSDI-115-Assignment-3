@@ -10,8 +10,8 @@ class SignUpView(CreateView):
     form_class = CustomUserCreationForm
     success_url = reverse_lazy('login')
 class UserProfileUpdateView(UpdateView):
-    template_name = "issues/user_profile.html"
-    success_url = reverse_lazy("issue_list")
+    template_name = "posts/user_profile.html"
+    success_url = reverse_lazy('post_list')
     model = CustomUser
     def get_initial(self):
         initial = super(UserProfileUpdateView, self).get_initial()
