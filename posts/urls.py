@@ -21,8 +21,6 @@ urlpatterns = [
     path('<int:pk>/edit/', PostUpdateView.as_view(), name='edit'),
     path('<int:pk>/delete/', PostDeleteView.as_view(), name='delete'),
     path('posted/', MyPostedListView.as_view(), name='my_posted_list'),
-    path('posted/', MyPostedListView.as_view(), name='my_posted_list'),
-
     path('friends/', MyFriendsListView.as_view(), name='my_friends_list'),
     path('dashboard/', MyDashboardView.as_view(), name='my_dashboard'),
     path('password_reset/done/', PasswordResetDoneView.as_view(), name='password_reset_done'),

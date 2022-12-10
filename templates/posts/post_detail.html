@@ -17,7 +17,7 @@
                         </div>
                         <div>
                             <div>
-                                <strong>By:</strong> <a href="#"> {{ post.poster}} </a>
+                                <strong>By:</strong> <a href="#"> {{ post.poster }} </a>
                             </div>
                             <div>
                                 <strong> On:</strong> {{ post.created_on }}
@@ -30,6 +30,15 @@
             <div class="card box post-text-box">
                 <p class="card-text">{{ post.body }}</p> {# There are more filters out there! #}
                 <div class="author-options">
+                    {% if user == post.poster %}
+                    <a href="{% url 'delete' post.id %}" class="btn btn-danger btn-sm">
+                        <i class="fa-solid fa-dumpster"></i>
+                    </a>
+                    <a href="{% url 'edit' post.id %}" class="btn btn-success btn-sm">
+                        <i class="fa-regular fa-pen-to-square"></i>
+                    </a>
+                    {% endif %}
+
                     {% if user != post.poster %}
                     <a href="#" class="btn btn-sm btn-light">
                         <i class="fa-regular fa-thumbs-up"></i>
@@ -39,15 +48,6 @@
                     </a>
                     <a href="#" class="btn btn-sm btn-light">
                         <i class="fa-regular fa-message"></i>
-                    </a>
-                    {% endif %}
-    
-                    {% if user == post.poster %}
-                    <a href="{% url 'delete' post.id %}" class="btn btn-danger btn-sm">
-                        <i class="fa-solid fa-dumpster"></i>
-                    </a>
-                    <a href="{% url 'edit' post.id %}" class="btn btn-success btn-sm">
-                        <i class="fa-regular fa-pen-to-square"></i>
                     </a>
                     {% endif %}
                 </div>
