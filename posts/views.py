@@ -33,6 +33,11 @@ class MyPostedListView(ListView):
 class PostListView(ListView):
     template_name = "posts/post_list.html"
     model = Post
+    def get_context_data(self, **kwargs): #Keyword arguments. All list views have this get_context_data() method. 
+        context = super().get_context_data(**kwargs) # The get method returns records that matched the name = "published". you can also use it like this, .get(name="published")
+        context["post_list"] = Post.objects.order_by("created_on"
+        ).reverse()
+        return context
 
 class PostDetailView(DetailView):
     template_name = "posts/post_detail.html"
