@@ -17,16 +17,14 @@ class Post(models.Model):
     created_on = models.DateTimeField(
         auto_now_add=True,
         null=True, 
-        blank=True,
-    )
-    #created_on = models.DateTimeField(default=datetime.now)
+        blank=True)
     poster = models.ForeignKey(
         get_user_model(),
         on_delete=models.CASCADE,
-        null=False
+        null=False)
+    #created_on = models.DateTimeField(default=datetime.now)  
 # django will create a different name to avoid collisions when running > python3 manage.py makemigrations
-    )
-
+    
 def __str__(self):
     return self.title
 
