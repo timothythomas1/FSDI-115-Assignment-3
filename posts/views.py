@@ -45,8 +45,9 @@ class PostCreateView(LoginRequiredMixin, CreateView):
     fields = ["body"]
 
     def form_valid(self, form): # This overrides the default form_valid() method of Django 
-        form.instance.requester = self.request.user # Allows the requester to request the user model.
+        form.instance.poster = self.request.user # Allows the requester to request the user model.
         return super().form_valid(form) # Super() calls the form method
+        
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):  # REMEMBER, Mixin order matters for validations.
     template_name = "posts/edit.html"
     model = Post
@@ -55,7 +56,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):  # RE
     # Test for UserPassesTestMixin that the user needs to pass
     def test_func(self):
         Post_obj = self.get_object()
-        return Post_obj.requester == self.request.user
+        return Post_obj.poster == self.request.user
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView): # REMEMBER, Mixin order matters for validations.
     model = Post
     # success_url ="/Posts" # You can specify success urlurl to redirect after successfully
@@ -64,5 +65,4 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView): # REM
     # Test for UserPassesTestMixin that the user needs to pass
     def test_func(self):
         Post_obj = self.get_object()
-        return Post_obj.requester == self.request.user
-
+        return Post_obj.poster == self.request.user
